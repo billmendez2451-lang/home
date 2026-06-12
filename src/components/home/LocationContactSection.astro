@@ -1,0 +1,79 @@
+---
+import { contactInfo } from '../../data/site';
+---
+
+<section class="section">
+  <div class="container-main">
+    <div class="section-header">
+      <h2 class="section-title">Ubicación y Contacto</h2>
+      <p class="section-subtitle">
+        Encuentra nuestra sede y canales de atención
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <!-- Contact Information -->
+      <div class="space-y-8">
+        <div>
+          <h3 class="text-lg font-bold text-primary-900 mb-4">Dirección</h3>
+          <address class="not-italic text-neutral-600 space-y-2">
+            <p class="font-semibold">{contactInfo.address}</p>
+            <p>{contactInfo.city}, {contactInfo.state}, {contactInfo.country}</p>
+          </address>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-bold text-primary-900 mb-4">Contacto</h3>
+          <ul class="space-y-3">
+            <li class="flex items-center gap-3">
+              <span class="text-2xl">📧</span>
+              <div>
+                <p class="text-sm text-neutral-500">Correo</p>
+                <a href={`mailto:${contactInfo.email}`} class="link-primary">
+                  {contactInfo.email}
+                </a>
+              </div>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="text-2xl">📞</span>
+              <div>
+                <p class="text-sm text-neutral-500">Teléfono</p>
+                <a href={`tel:${contactInfo.phone}`} class="link-primary">
+                  {contactInfo.phone}
+                </a>
+              </div>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="text-2xl">⏰</span>
+              <div>
+                <p class="text-sm text-neutral-500">Horario de atención</p>
+                <p class="font-medium text-neutral-900">{contactInfo.hours}</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-bold text-primary-900 mb-4">Ubicar en mapa</h3>
+          <a
+            href="https://maps.google.com/?q=San+Casimiro,+Aragua,+Venezuela"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-secondary inline-block"
+          >
+            Abrir en Google Maps →
+          </a>
+        </div>
+      </div>
+
+      <!-- Map Placeholder -->
+      <div class="h-96 bg-neutral-200 rounded-lg overflow-hidden flex items-center justify-center">
+        <div class="text-center">
+          <div class="text-6xl mb-4">🗺️</div>
+          <p class="text-neutral-600 font-medium">Mapa de ubicación</p>
+          <p class="text-sm text-neutral-500 mt-2">San Casimiro, Aragua</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
